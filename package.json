@@ -1,0 +1,16 @@
+{
+  "name": "scott-profile",
+  "version": "1.0.0",
+  "description": "This project will be used to show examples of my work to a website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Hancock",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-render": "^0.2.1",
+    "koa-router": "^7.4.0"
+  }
+}
