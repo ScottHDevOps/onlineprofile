@@ -22,6 +22,8 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="js\index.js" />
+    <Content Include="js\index.html" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
@@ -29,6 +31,9 @@
     <Compile Include="build\index.js" />
     <TypeScriptCompile Include="src\greet.ts" />
     <TypeScriptCompile Include="src\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\io.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
