@@ -9,7 +9,7 @@ router.get('/awesome', async (ctx) => {
 });
 
 router.get('/', async (ctx) => {
-    ctx.body = 'Sup!';
+    ctx.body = '<html><head><title>Test</title></head><body><h1>awesome</h1></html>';
 });
 
 app.use(router.routes());
