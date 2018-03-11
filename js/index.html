@@ -41,6 +41,10 @@
             padding: 0;
         }
 
+        #messages .ownMessage {
+            color: dodgerblue;
+        }
+
         #messages li {
             padding: 5px 10px;
         }
@@ -60,8 +64,27 @@
     <script>
         $(function () {
             var socket = io();
+            //var startTime;
+
+            /*socket.on('pong', function () {
+                latency = Date.now() - startTime;
+                console.log(latency / 1000);
+            });*/
+
+            /*//setInterval(function () {
+            console.log('sending ping');
+            startTime = Date.now();
+            socket.emit('ping');
+            console.log('sent');
+            //}, 2000);*/
+
+
+
             $('form').submit(function () {
+                console.log('sending chat message');
                 socket.emit('chat message', $('#m').val());
+                $('#messages').append($('<li class="ownMessage">').text('(me): '+$('#m').val()));
+                console.log('chat message sent');
                 $('#m').val('');
                 return false;
             });

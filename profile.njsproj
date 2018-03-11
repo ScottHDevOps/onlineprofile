@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="build" />
+    <Folder Include="js\" />
     <Folder Include="public\" />
     <Folder Include="src" />
   </ItemGroup>

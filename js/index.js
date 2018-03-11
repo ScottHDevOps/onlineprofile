@@ -2,12 +2,21 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+io.set('heartbeat interval', 1);
+
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function (socket) {
-    console.log('a user connected');
+    io.on('connect', function () {
+        console.log('a user connected');
+        socket.broadcast.to(socket.sessionid).emit('chat message', 'Hey welcome to my server, be fair and play nice!');
+        //console.log();
+    });
+    socket.on('ping', function () {
+        socket.emit('pong');
+    });
     socket.on('disconnect', function () {
         console.log('user disconnected');
     });
